@@ -1,7 +1,3 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//vpc?ref=vpc-v0.0.1"
-#}
-
 
 
 include "root" {
@@ -15,7 +11,7 @@ include "stage" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//vpc?ref=${include.stage.locals.vpc-module}"
+  source = "git::git@github.c/infrastucture-modules.git//vpc?ref=${include.stage.locals.vpc-module}"
 }
 
 include "env" {

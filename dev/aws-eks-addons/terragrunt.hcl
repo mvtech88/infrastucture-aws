@@ -1,6 +1,3 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//aws-eks-addons?ref=aws-eks-addons-v0.0.3"
-#}
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +10,7 @@ include "dev" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//aws-eks-addons?ref=${include.dev.locals.aws-eks-addons-module}"
+  source = "git::git@github.com:mvtech88/infrastucture-modules.git//aws-eks-addons?ref=${include.dev.locals.aws-eks-addons-module}"
 }
 
 include "env" {
@@ -37,6 +34,7 @@ dependency "eks" {
   mock_outputs = {
     eks_name            = "demo"
     openid_provider_arn = "arn:aws:iam::123456789012:oidc-provider"
+  mock_outputs_allowed_terraform_commands = ["validate", "plan", "apply"]
   }
 }
 

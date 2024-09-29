@@ -11,7 +11,7 @@ include "dev" {
 
 
 terraform {
-  source = "git@github.com:Mohit-Verma-1688/infrastucture-modules.git//eks?ref=${include.dev.locals.eks-module}"
+  source = "git::git@github.com:mvtech88/infrastucture-modules.git//eks?ref=${include.dev.locals.eks-module}"
 }
 
 include "env" {
@@ -32,8 +32,8 @@ inputs = {
       instance_types = ["t3.large"]
       scaling_config = {
         desired_size = 1
-        max_size     = 10
-        min_size     = 0
+        max_size     = 3
+        min_size     = 1
       }
     }
   }
@@ -44,5 +44,6 @@ dependency "vpc" {
 
   mock_outputs = {
     private_subnet_ids = ["subnet-1234", "subnet-5678"]
+  mock_outputs_allowed_terraform_commands = ["validate", "plan", "apply"]
   }
 }

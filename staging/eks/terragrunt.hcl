@@ -1,6 +1,3 @@
-#terraform {
-#  source = "git@github.com:Mohit-Verma-1688/infrastucture-modules.git//eks?ref=eks-v0.0.2"
-#}
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +10,7 @@ include "stage" {
 }
 
 terraform {
-  source = "git@github.com:Mohit-Verma-1688/infrastucture-modules.git//eks?ref=${include.stage.locals.eks-module}"
+  source = "git@github.com/infrastucture-modules.git//eks?ref=${include.stage.locals.eks-module}"
 }
 
 include "env" {

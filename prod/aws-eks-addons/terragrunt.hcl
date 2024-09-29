@@ -1,6 +1,3 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//aws-eks-addons?ref=aws-eks-addons-v0.0.3"
-#}
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +10,7 @@ include "prod" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//aws-eks-addons?ref=${include.prod.locals.aws-eks-addons-module}"
+  source = "git::git@github.co/infrastucture-modules.git//aws-eks-addons?ref=${include.prod.locals.aws-eks-addons-module}"
 }
 
 include "env" {

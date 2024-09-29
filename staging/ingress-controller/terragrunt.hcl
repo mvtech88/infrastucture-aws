@@ -1,6 +1,3 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//ingress-nginx?ref=ingress-controller-v0.0.4"
-#}
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +10,7 @@ include "stage" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//ingress-nginx?ref=${include.stage.locals.ingress-controller-module}"
+  source = "git::git@github./infrastucture-modules.git//ingress-nginx?ref=${include.stage.locals.ingress-controller-module}"
 }
 
 

@@ -1,6 +1,4 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//kube-prometheus-stack?ref=kube-prometheus-stack-v0.0.20"
-#}
+
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +11,7 @@ include "dev" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//kube-prometheus-stack?ref=${include.dev.locals.kube-prometheus-stack-module}"
+  source = "git::git@github.com:mvtech88/infrastucture-modules.git//kube-prometheus-stack?ref=${include.dev.locals.kube-prometheus-stack-module}"
 }
 
 

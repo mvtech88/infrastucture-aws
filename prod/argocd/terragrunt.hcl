@@ -1,6 +1,4 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//argocd?ref=argocd-v0.1.2"
-#}
+
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +11,7 @@ include "prod" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//argocd?ref=${include.prod.locals.argocd-module}"
+  source = "git::git@github.com:infrastucture-modules.git//argocd?ref=${include.prod.locals.argocd-module}"
 }
 
 include "env" {
@@ -30,7 +28,7 @@ inputs = {
   enable_argocd      = include.prod.locals.argocd
   argocd_helm_verion = include.prod.locals.argocd_helm_verion
   aws_ssm_key_name = "argocd-terraform-key"
-  private_git_repo = "git@github.com:Mohit-Verma-1688/applications.git"
+  private_git_repo = "git@github.com:Mo*****/applications.git"
 }
 
 dependency "eks" {

@@ -1,0 +1,11 @@
+/*/*/.terragrunt-cache/*
+
+/**/.terragrunt-cache/*
+
+/**/.terraform/*
+
+/**/.terraform.lock.hcl
+
+/state.tf
+
+/provider.tf

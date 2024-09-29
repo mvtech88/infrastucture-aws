@@ -1,6 +1,3 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//external-dns?ref=external-dns-v0.0.11"
-#}
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +10,7 @@ include "prod" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//external-dns?ref=${include.prod.locals.external-dns-module}"
+  source = "git::git@github.nfrastucture-modules.git//external-dns?ref=${include.prod.locals.external-dns-module}"
 }
 
 include "env" {

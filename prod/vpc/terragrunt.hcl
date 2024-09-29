@@ -1,8 +1,3 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//vpc?ref=vpc-v0.0.1"
-#}
-
-
 
 include "root" {
   path = find_in_parent_folders()
@@ -15,7 +10,7 @@ include "prod" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//vpc?ref=${include.prod.locals.vpc-module}"
+  source = "git::git@github/infrastucture-modules.git//vpc?ref=${include.prod.locals.vpc-module}"
 }
 
 include "env" {

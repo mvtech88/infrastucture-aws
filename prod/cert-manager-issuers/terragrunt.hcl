@@ -1,6 +1,4 @@
-#terraform {
-#  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//cert-manager-issuers?ref=cert-manager-issuers-v0.0.5"
-#}
+
 
 include "root" {
   path = find_in_parent_folders()
@@ -13,7 +11,7 @@ include "prod" {
 }
 
 terraform {
-  source = "git::git@github.com:Mohit-Verma-1688/infrastucture-modules.git//cert-manager-issuers?ref=${include.prod.locals.cert-manager-issuers-module}"
+  source = "git::git@github.co/infrastucture-modules.git//cert-manager-issuers?ref=${include.prod.locals.cert-manager-issuers-module}"
 }
 
 include "env" {

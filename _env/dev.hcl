@@ -2,34 +2,28 @@ locals {
 
 #  make false for the component not to deploy during bootstraping. 
     
-    aws-eks-addon = "false"
-    cert-manager = "false" 
-    cert-manager-issuers = "false"
-    external-dns = "false" 
-    ingress-controller = "false"
-    aws-lb-controller = "false"
-    argocd = "false"
-    kube-prometheus-stack = "false"
-    argocd-imageupdater = "false"
+    aws-eks-addon = "true"
+    cert-manager = "true" 
+    cert-manager-issuers = "true"
+    external-dns = "true" 
+    ingress-controller = "true"
+    argocd = "true"
+    kube-prometheus-stack = "true"
 
-# Infrastructure Module for the deployment.
+# Infrastructure Module used for the deployment using git tags.
     vpc-module = "vpc-v0.0.1"
-    eks-module = "eks-v0.0.1"
-    external-dns-module = "external-dns-v0.0.1"
-    argocd-module = "argocd-v0.0.1"
-    aws-eks-addons-module = "aws-eks-addons-v0.0.1"
-    cert-manager-module = "cert-manager-v0.0.1"
+    eks-module = "eks-v0.0.4"
+    external-dns-module = "external-dns-v0.0.4"
+    argocd-module = "argocd-v0.0.4"
+    aws-eks-addons-module = "aws-eks-addons-v0.0.4"
+    cert-manager-module = "cert-manager-v0.0.7"
     cert-manager-issuers-module = "cert-manager-issuers-v0.0.1"
     ingress-controller-module = "ingress-controller-v0.0.1"
     kube-prometheus-stack-module = "kube-prometheus-stack-v0.0.1"
-    argocd-imageupdater-module = "argocd-imageupdater-v0.0.1"
-    aws-lbc-module = "aws-lbc-v0.0.1"
 
-# Helm versions used for the infra components.name 
+# Helm versions used for the infra components name 
     argocd_helm_verion = "5.42.0"
-    argocd-imageup_helm_verion = "0.8.4"
     aws-ebs-csi_version = "v1.18.0-eksbuild.1"
-    aws-lbc_helm_verion = "1.4.4"
     cert-manager_helm_version = "v1.12.0"
     cert-manager-issuers_helm_version = "0.2.5"
     external-dns_helm_version = "6.23.3"
